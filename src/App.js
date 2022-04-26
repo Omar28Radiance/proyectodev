@@ -14,11 +14,9 @@
  import like from "./components/source/like.svg";
  import logobig from "./components/source/logobig.png";
  import pase from "./components/source/logout.png";
-//  import RingLoader from "react-spinners/RingLoader";
  
  export default function App() {
    const [data, setData] = useState([]);
-  //  const [loading, setLoading] = useState(true);
    const [favs, setFavs] = useState([]);
    const [view, setView] = useState("feed");
    const [isSearch, setIsSearch] = useState(false);
@@ -186,7 +184,6 @@
             user={user || {}} 
           />
         )}
-        {/* { loading?<RingLoader className="loader" color={"#477A0C"} loading={loading} size={100} />: */}
        <section className="tweets">
          { isSearch ? (
           <div className="wrapper">
@@ -223,7 +220,7 @@
                  
                  <span>{item.likes || 0}</span>
                </button>
-               {/* <p>-{new Date(item.date).toLocaleDateString("es-MX", {day:"numeric"}}} {new Date(item.date).toLocaleDateString("es-MX", {month:"short"})}</p> */}
+               <p>-{new Date(item.date).toLocaleDateString("es-MX", {day:"numeric"})} {new Date(item.date).toLocaleDateString("es-MX", {month:"short"})}</p>
              </div>
              {
                (user !== null && user.uid === item.uid) && 
