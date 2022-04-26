@@ -188,7 +188,17 @@
         )}
         {/* { loading?<RingLoader className="loader" color={"#477A0C"} loading={loading} size={100} />: */}
        <section className="tweets">
-         { isSearch ? <p>Cargando...</p> : null}
+         { isSearch ? (
+          <div className="wrapper">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="shadow"></div>
+            <div class="shadow"></div>
+            <div class="shadow"></div>
+            <span>Cargando...</span>
+          </div>
+          ) : null}
          { user && (<button className="btn-feeding" type="button" onClick={() => setView("feed") }>Tweets</button>)}
          { user && (<button className="btn-favorites" type="button" onClick={() => setView("favs") }>Favs</button>)}
          
