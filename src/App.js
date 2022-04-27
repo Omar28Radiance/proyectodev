@@ -220,7 +220,7 @@
                  
                  <span>{item.likes || 0}</span>
                </button>
-               <p>-{new Date(item.date).toLocaleDateString("es-MX", {day:"numeric"})} {new Date(item.date).toLocaleDateString("es-MX", {month:"short"})}</p>
+               <p>{new Date(item.date).toLocaleDateString("es-MX", {day:"numeric"})} {new Date(item.date).toLocaleDateString("es-MX", {month:"short"})}</p>
              </div>
              {
                (user !== null && user.uid === item.uid) && 

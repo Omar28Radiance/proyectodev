@@ -1,5 +1,12 @@
 .App {
+  /* text-align: center; */
+  font-family: sans-serif;
   text-align: center;
+  max-width: auto;
+  height: auto;
+  margin: 0 auto;
+  height: 100vh;
+  background-color: #280137;
 }
 
 .App-logo {
@@ -35,4 +42,14 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.App-centered-column {
+  font-family: sans-serif;
+  text-align: center;
+  max-width: auto;
+  height: auto;
+  margin: 0 auto;
+  height: 100vh;
+  background-color: #280137;
 }
