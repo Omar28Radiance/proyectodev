@@ -24,7 +24,6 @@ const Form = ({
            photo: user.photoURL,
            date: Date.now()
        }
-        console.warn(newTweet);
 
         const addTweet = fireStore.collection("tweets").add(newTweet);
         const getDoc = addTweet.then(doc => (doc.get()))

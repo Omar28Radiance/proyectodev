@@ -60,7 +60,6 @@ export default function App() {
       });
 
     auth.onAuthStateChanged((user) => {
-      //console.warn('LOGGED WITH:', user);
       setUser(user)
 
       if (user) {
@@ -88,19 +87,14 @@ export default function App() {
       if (data.length && user.favorites && user.favorites.length) {
         const favorites = user.favorites.map(favId => {
           const tweetFav = data.find(item => item.id === favId)
-          // console.log(data, favId)
           return tweetFav
         })
           .filter(item => item !== undefined)
         setFavs(favorites)
-        // console.log('FAVORITESSSSSSSSS', favorites)
       }
-      //  console.log('DATA', data)
-      //  console.log('Entrando al efecto', user)
 
       const findUser = fireStore.collection('users').where("uid", "==", user.uid).get()
       findUser.then((query) => {
-        //  console.log('query', query.empty)
         //si el usuario con campo uid NO existe en la collection "users", empty === true
         //si el usuario con campo uid SI existe en la collection "users", empty === false
 
@@ -143,7 +137,6 @@ export default function App() {
         snapshot.forEach(doc => {
           const userDoc = doc.data()
           if (userDoc.uid === user.uid) {
-            //  console.log(doc.id)
             fireStore.doc(`users/${doc.id}`).update({
               favorites: [...userDoc.favorites, id]
             })
