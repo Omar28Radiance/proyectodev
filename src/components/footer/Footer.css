@@ -3,7 +3,7 @@
     padding-left: 100px;
     padding-right: 100px;
     height: 100px;
-    background-color: #dc3545;
+    background-color: #490648;
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -13,4 +13,12 @@
     bottom: 0;
     width: 100%;
     transition: background 0.2s linear;
+}
+
+p.col-sm {
+    background-color: #490648;
+}
+
+.container {
+    background-color: blueviolet;
 }
